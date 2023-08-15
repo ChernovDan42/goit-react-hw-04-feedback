@@ -5,7 +5,6 @@ import { Section } from "./Section/Section";
 import { Notification } from "./Notifications/Notification";
 import css from './App.module.css'
 import { useState } from "react";
-import { useEffect } from "react";
 
 
 
