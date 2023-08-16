@@ -17,7 +17,7 @@ export function App(){
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
   
- const state=['good','neutral','bad']
+ const feedbackOptions=['good','neutral','bad']
  
   
 
@@ -44,8 +44,9 @@ export function App(){
   }
   
 
-  const countTotalFeedback=()=> {
-    return good+neutral+bad
+  const countTotalFeedback = () => {
+    const feedbackOptions=[good,neutral,bad]
+    return feedbackOptions.reduce((acc,el)=> acc+=el,0)
   }
 
 
@@ -65,7 +66,7 @@ export function App(){
     return (
       <div className={css.App}>
         <Section title='Please leave feedback'>
-        {state.map(el => {
+        {feedbackOptions.map(el => {
           return (
             <FeedbackOptions key={el}
               option={el}
