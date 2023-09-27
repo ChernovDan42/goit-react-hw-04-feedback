@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-
-export function Section({ title,children}) {
-    return (
-        <>
-            <h2>{title}</h2>
-            {children}
-        </>
-    )
+export function Section({ title, children }) {
+  return (
+    <>
+      <h2>{title}</h2>
+      {children}
+    </>
+  );
 }
 
 Section.propTypes = {
-    title: PropTypes.string,
-    cildren:PropTypes.element,
-}
+  title: PropTypes.string,
+  cildren: PropTypes.element,
+};

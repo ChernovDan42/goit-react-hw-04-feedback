@@ -1,19 +1,17 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
+export function Statistics({ good, neutral, bad, total, positivePercentage }) {
+  return (
+    <>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad} </p>
 
-export function Statistics({good,neutral,bad,total,positivePercentage}) {
-    return (
-        <>
-          <p>Good: { good }</p> 
-        <p>Neutral: { neutral }</p> 
-        <p>Bad: { bad } </p> 
-        
-        <p>Total: {total}</p>
-        
-        <p>Positive feedback: {positivePercentage}%</p>
-        </>
-        
-    )
+      <p>Total: {total}</p>
+
+      <p>Positive feedback: {positivePercentage}%</p>
+    </>
+  );
 }
 
 Statistics.propTypes = {
@@ -21,5 +19,5 @@ Statistics.propTypes = {
   neutral: PropTypes.number,
   bad: PropTypes.number,
   total: PropTypes.number,
-  positivePercentage:PropTypes.string
-}
+  positivePercentage: PropTypes.string,
+};

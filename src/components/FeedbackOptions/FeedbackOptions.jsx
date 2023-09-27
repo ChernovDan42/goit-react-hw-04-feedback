@@ -1,20 +1,27 @@
-import css from "./FeedbackOptions.module.css"
-import PropTypes from 'prop-types'
+import css from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
 
-
-function capitalizeFirstLetter(option) {
-  return option.charAt(0).toUpperCase() + option.slice(1);
-}
-
-
-export function FeedbackOptions({ option, onLeaveFeedback }) {
-    return (
-         <button className={css.btn} type="button" name={option} onClick={onLeaveFeedback}>{capitalizeFirstLetter(option)}</button>
-    )
-   
+export function FeedbackOptions({ options, onLeaveFeedback }) {
+  return (
+    <>
+      {options.map(option => {
+        return (
+          <button
+            key={option}
+            className={css.btn}
+            type="button"
+            name={option}
+            onClick={onLeaveFeedback}
+          >
+            {option}
+          </button>
+        );
+      })}
+    </>
+  );
 }
 
 FeedbackOptions.propTypes = {
-  option: PropTypes.string.isRequired,
-  onLeaveFeedback:PropTypes.func.isRequired,
-}
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};

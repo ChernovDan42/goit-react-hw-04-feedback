@@ -1,14 +1,9 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-export function Notification({ message }){
-    return (
-        <p>{ message }</p>
-    )
-
-} 
-
-
+export function Notification({ message }) {
+  return <p>{message}</p>;
+}
 
 Notification.propTypes = {
-    message:PropTypes.string
-}
+  message: PropTypes.string,
+};
